@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/* Guess the word */
+#guess-word{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#89489c;
+}
+
+#guess-word, .quote-input{
+    font-family: Bahnschrift;
+}
+
+.container{
+    background: #f869bd;
+    padding: 1rem;
+    border-radius: .5rem;
+    width: 700px;
+    max-width: 90%;
+}
+
+.timer{
+    font-family: "century gothic";
+    font-weight: bold;
+    position: absolute;
+    top: 10rem;
+    font-size: 3rem;
+    color: #f869bd;
+}
+
+.quote-display{
+    margin-bottom: 1rem;
+    margin-left: calc(1rem + 2px);
+    margin-right: calc(1rem + 2px);
+}
+
+.quote-input{
+    background: transparent;
+    border: 1.5px solid #9e3271;
+    outline: none;
+    width: 100%;
+    height: 7rem;
+    resize: none;
+    padding: 0rem 1rem;
+    transition: all 500ms ease-in-out;
+    border-radius: .6rem;
+    font-size: 1rem;
+}
+
+.quote-input:focus{
+    border-color: #111;
+}
+
+.correct{
+    color: #3b8f0b;
+}
+
+.incorrect{
+    color: #ee0000;
+    text-decoration: underline;
+}

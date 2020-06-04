@@ -1,0 +1,208 @@
+@font-face{
+    font-family: Avenir;
+    src: url(../fonts/AvenirLTStd-Roman.otf);
+}
+
+@font-face{
+    font-family: Avenirdos;
+    src: url(../fonts/AvenirLTStd-Medium.otf);
+}
+@font-face{
+    font-family: Avenirt;
+    src: url(../fonts/AvenirLTStd-Book.otf);
+}
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Avenir;
+    font-weight: lighter;
+}
+
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, #ba7453, #d1a984);
+    z-index: -1;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    min-height: 10vh;
+    color: #fff;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+.hamburger{
+    grid-column: 2/3;
+    z-index: 1000;
+}
+
+#logo{
+    justify-self: end;
+}
+
+section{
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    height: 90%;
+    width: 100%;
+    position: relative;
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.headline{
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    font-size: 3em;
+    font-weight: bold;
+    transform: translate(-20%, -70%);
+    z-index: 1;
+}
+
+.hero::after{
+    content: "";
+    background: #333;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .2;
+}
+
+.enlaces{
+    top: 0px;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    transition: all 1s ease-in-out;
+    background: #566468;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(120deg, #d06048, #566468);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(120deg, #d06048, #566468); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: 5;
+}
+
+.enlaces a:first-child{
+    margin-top: 8rem;
+}
+
+.enlaces a{
+    margin-left: 8rem;
+    margin-top: 5rem;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all .5s ease-in;
+    text-decoration: none;
+    color: #000;
+}
+
+.enlaces a:hover{
+    font-size: 28px;
+    /* animation: Izq 1s ease-in-out; */
+}
+
+.uno{
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);    
+}
+
+.dos{
+    -webkit-clip-path: polygon(0 0, 78% 0, 44% 100%, 0% 100%);
+    clip-path: polygon(0 0, 78% 0, 44% 100%, 0% 100%);
+}
+
+@keyframes Izq{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes Der{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes Arr{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@media only screen and (max-width: 1140px){
+    .enlaces a{
+        margin-left: 7rem;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .enlaces a{
+        margin-left: 5rem;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .dos{
+        -webkit-clip-path: polygon(0 0, 100% 0, 44% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 44% 100%, 0% 100%);
+    }
+
+    .enlaces a{
+        margin-left: 3rem;
+        font-size: 18px;
+    }
+    
+    .enlaces a:hover{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 340px){
+    .enlaces a{
+        margin-left: 2.5rem;
+        font-size: 17px;
+    }
+    
+    .enlaces a:hover{
+        font-size: 20px;
+    }
+}
